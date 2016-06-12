@@ -24,7 +24,7 @@ bot.on('start', () => {
 
       let args = {
         data: {
-          'summary_length': 2,
+          'summary_length': Math.floor(contents.text.length / 500),
           'articles': [fullText]
         },
         headers: {
