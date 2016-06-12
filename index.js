@@ -9,4 +9,8 @@ var bot = new SlackBot({
 
 bot.on('start', () => {
   bot.postMessageToChannel('testingtesting123', "We're up and running!")
-})
+
+  bot.on('message', (contents) => {
+    console.log(contents);
+  });
+});
