@@ -11,6 +11,9 @@ bot.on('start', () => {
   bot.postMessageToChannel('testingtesting123', "We're up and running!")
 
   bot.on('message', (contents) => {
-    console.log(contents);
+    if (contents.type === 'message' && contents.text.length > 1000) {
+      console.log("We're going to have to summarize this one...");
+    }
+
   });
 });
