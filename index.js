@@ -1,4 +1,6 @@
+require('dotenv').config()
 const SlackBot = require('slackbots');
+
 
 var bot = new SlackBot({
     token: process.env.BOT_TOKEN,
@@ -6,5 +8,5 @@ var bot = new SlackBot({
 });
 
 bot.on('start', () => {
-  bot.postMessageToChannel('')
+  bot.postMessageToChannel('testingtesting123', "We're up and running!")
 })
