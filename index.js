@@ -1,5 +1,3 @@
-const pry = require('pryjs');
-
 require('dotenv').config()
 const SlackBot = require('slackbots');
 const RestClient = require('node-rest-client').Client;
