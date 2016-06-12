@@ -15,7 +15,7 @@ bot.on('start', () => {
 
   bot.on('message', (contents) => {
     if (contents.type === 'message' && contents.text.length > 1000) {
-      console.log("We're going to have to summarize this one...");
+      let channel = contents.channel;
 
       let fullText = {
                       "title": "",
@@ -24,7 +24,7 @@ bot.on('start', () => {
 
       let args = {
         data: {
-          'summary_length': 3,
+          'summary_length': 2,
           'articles': [fullText]
         },
         headers: {
@@ -33,11 +33,13 @@ bot.on('start', () => {
         }
       };
 
+      console.log("We're going to have to summarize this one...");
+
       client.post('https://api.agolo.com/nlp/v0.2/summarize', args, function(data) {
-        console.log(data.summary[0].sentences.join(' '));
+        let summary = data.summary[0].sentences.join(' ');
+        bot.postMessage(channel, summary);
+        console.log('done');
       });
-
-
     }
 
   });
