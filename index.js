@@ -38,7 +38,6 @@ bot.on('start', () => {
       client.post('https://api.agolo.com/nlp/v0.2/summarize', args, function(data) {
         let summary = data.summary[0].sentences.join(' ');
         bot.postMessage(channel, summary);
-        console.log('done');
       });
     }
 
