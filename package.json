@@ -11,6 +11,8 @@
   "license": "ISC",
   "dependencies": {
     "dotenv": "^2.0.0",
+    "node-rest-client": "^1.8.0",
+    "pryjs": "^1.0.2",
     "slackbots": "^0.5.1"
   }
 }
